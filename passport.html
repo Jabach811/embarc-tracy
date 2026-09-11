@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Passport Club · Embarc Tracy</title>
+<link rel="icon" href="assets/favicon-96.png">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+<main>
+  <section class="deal-hero">
+    <div class="wrap">
+      <div class="eyebrow">Passport Club</div>
+      <h1>Free to join. Pays for itself the first time.</h1>
+      <p style="max-width:60ch">Every deal on this site is a member price. Joining takes your name and phone number, nothing else. <span id="today-line"></span></p>
+      <a class="btn" href="#join">Join now</a> <a class="btn btn-ghost" id="today-link" href="menu.html" style="margin-left:8px">Shop today's deal</a>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="perks">
+        <div class="perk"><b>30% off, every day</b>A different category each day. Online or in store.</div>
+        <div class="perk"><b>Free gifts with your order</b>Spend $35 for a keychain, $50 for a stash bag, $75 for a hat.</div>
+        <div class="perk"><b>Friday Getaway Bag</b>$60 for a bag worth up to $125. Members only, in store.</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head"><h2>The weekly schedule</h2></div>
+      <div class="week" id="week"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head"><h2>How it works</h2></div>
+      <div class="steps">
+        <div><b>1. Join</b>Below, or at the counter. Name and phone number.</div>
+        <div><b>2. Shop</b>Member prices show on every item. Online-only ones are marked.</div>
+        <div><b>3. Pick up</b>Give your phone number or pickup code at the counter. Pay there.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="join-sec">
+    <div class="wrap">
+      <div class="join" id="join">
+        <div>
+          <h2>Join the Passport Club</h2>
+          <p class="mini">Free. No card, no app. We text you the deal of the day and nothing else.</p>
+        </div>
+        <form id="join-form">
+          <input type="text" name="name" placeholder="First name" required autocomplete="given-name">
+          <input type="tel" name="phone" placeholder="Phone number" required autocomplete="tel">
+          <button class="btn" type="submit">Join, it's free</button>
+          <p class="mini">Concept site. Nothing is sent anywhere.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section id="brands">
+    <div class="wrap">
+      <div class="sec-head"><div><h2>Brands on sale every day</h2><p class="mini" style="margin:0">Same price online and in store.</p></div></div>
+      <div class="brands-grid" id="brands"></div>
+    </div>
+  </section>
+</main>
+<script src="data/products.js"></script>
+<script src="data/brands.js"></script>
+<script src="js/deals.js"></script>
+<script src="js/data.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/passport.js"></script>
+</body>
+</html>

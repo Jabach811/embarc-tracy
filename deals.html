@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deals · Embarc Tracy</title>
+<link rel="icon" href="assets/favicon-96.png">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+<main>
+  <section class="deal-hero">
+    <div class="wrap">
+      <h1>Deals, and exactly where they count.</h1>
+      <p style="max-width:60ch">Some deals work online and in store. A few only work when you order online. We say which is which on every price, so you never show up short.</p>
+      <div class="deal-card" id="deal-card"></div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head"><h2>In the deal right now</h2><a id="today-link" href="menu.html">See all</a></div>
+      <div class="rail" id="today-rail"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head"><div><h2>Every day of the week</h2><p class="mini" style="margin:0">30% off, online or in store, for Passport Club members.</p></div></div>
+      <div class="week" id="week"></div>
+    </div>
+  </section>
+
+  <section id="online">
+    <div class="wrap">
+      <div class="online-box">
+        <h2>Online-only prices. Read this part.</h2>
+        <p>A few items are half price, but only if you reserve online first. If you walk in and ask for them at the counter, you pay the regular price. Here's how to get the deal:</p>
+        <ol>
+          <li>Add the item here and tap Reserve for pickup.</li>
+          <li>Come in within the day with your ID. Give the code.</li>
+          <li>Pay the online price, in cash or by debit.</li>
+        </ol>
+        <p class="mini" style="margin:0"><span id="online-count"></span> items are online only today. They're marked "Online only" everywhere on this site.</p>
+      </div>
+      <div class="rail" id="online-rail" style="margin-top:24px"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head"><div><h2>Brands on sale every day</h2><p class="mini" style="margin:0">Same price online and in store, for members.</p></div><a href="passport.html#brands">All brands</a></div>
+      <div class="rail" id="everyday-rail"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap bag">
+      <div>
+        <div class="eyebrow">Fridays, in store, members only</div>
+        <h2>The Getaway Bag</h2>
+        <p>$60 for a bag worth up to $125, put together by our Guides. In store only, while they last.</p>
+        <div class="countdown" id="countdown"></div>
+        <a class="btn btn-ghost" href="passport.html">Join the club first</a>
+      </div>
+      <img src="assets/tracy-polaroid.webp" alt="">
+    </div>
+  </section>
+</main>
+<script src="data/products.js"></script>
+<script src="data/brands.js"></script>
+<script src="js/deals.js"></script>
+<script src="js/data.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/deals-page.js"></script>
+</body>
+</html>

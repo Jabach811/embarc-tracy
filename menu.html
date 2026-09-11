@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Menu · Embarc Tracy</title>
+<link rel="icon" href="assets/favicon-96.png">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+<main class="wrap menu-layout">
+  <aside class="filters" id="filters"></aside>
+  <div>
+    <div class="menu-top">
+      <div><h1 id="menu-title"></h1><p class="mini" id="count" style="margin:4px 0 0"></p></div>
+      <div class="sortbar">
+        <button class="chip filter-toggle" id="filter-open">Filter</button>
+        <label>Sort <select id="sort">
+          <option value="deal">Best deal</option>
+          <option value="priceAsc">Price, low to high</option>
+          <option value="priceDesc">Price, high to low</option>
+          <option value="thc">Strongest first</option>
+          <option value="az">A to Z</option>
+        </select></label>
+      </div>
+    </div>
+    <div class="menu-banner" id="menu-banner" hidden></div>
+    <div class="active-filters" id="active"></div>
+    <div class="grid" id="grid"></div>
+    <div class="empty" id="empty" hidden></div>
+    <div id="sentinel" class="more mini" hidden>Loading more</div>
+  </div>
+</main>
+<script src="data/products.js"></script>
+<script src="data/brands.js"></script>
+<script src="js/deals.js"></script>
+<script src="js/data.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/menu.js"></script>
+</body>
+</html>
