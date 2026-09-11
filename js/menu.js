@@ -77,6 +77,10 @@ document.addEventListener('DOMContentLoaded', () => {
     } else b.hidden = true;
   }
 
+  function catrow() {
+    $('#catrow').innerHTML = chip(state.deal === 'today', `30% off today · ${t.short}`, { deal: state.deal === 'today' ? '' : 'today' }, 'cat-deal') +
+      Data.CATS.map(c => `<button class="cat-pick${state.cat === c.key ? ' on' : ''}" data-patch='${JSON.stringify({ cat: state.cat === c.key ? '' : c.key, size: '', infused: false })}'><i><img src="assets/icons/icon-${c.icon}.svg" alt=""></i>${c.label}</button>`).join('');
+  }
   function activeChips() {
     const out = [];
     if (state.q) out.push(chip(true, `"${state.q}"`, { q: '' }));
@@ -90,6 +94,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (state.min || state.max) out.push(chip(true, state.max ? (state.min ? `$${state.min} to $${state.max}` : `Under $${state.max}`) : `$${state.min} and up`, { min: 0, max: 0 }));
     if (state.brand) out.push(chip(true, state.brand, { brand: '' }));
     $('#active').innerHTML = out.join('');
+    $('#filter-n').textContent = out.length;
+    $('#filter-n').hidden = !out.length;
   }
 
   function render() {
@@ -98,6 +104,9 @@ document.addEventListener('DOMContentLoaded', () => {
     $('#menu-title').textContent = title();
     $('#count').textContent = `${list.length} item${list.length === 1 ? '' : 's'}`;
     $('#sort').value = state.sort;
+    $('#sort-m').value = state.sort;
+    $('#sort-label').textContent = $('#sort-m').selectedOptions[0].textContent;
+    catrow();
     renderFilters();
     $('#filter-count').textContent = list.length;
     activeChips();
@@ -123,7 +132,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const c = e.target.closest('[data-patch]');
     if (c) set(JSON.parse(c.dataset.patch));
   });
-  $('#sort').onchange = e => set({ sort: e.target.value });
+  $('#sort').onchange = $('#sort-m').onchange = e => set({ sort: e.target.value });
+  $('#filter-open-m').onclick = () => document.body.classList.add('filters-open');
   $('#filter-open').onclick = () => document.body.classList.add('filters-open');
   render();
 });
