@@ -66,6 +66,18 @@ window.UI = (() => {
   }
   function grid(list, date) { return list.map(p => card(p, date)).join(''); }
 
-  document.addEventListener('DOMContentLoaded', () => { chrome(); Cart.render(); });
+  function railNav() {
+    document.querySelectorAll('.rail').forEach(rail => {
+      const head = rail.previousElementSibling;
+      if (!head || !head.classList.contains('sec-head')) return;
+      const nav = document.createElement('div');
+      nav.className = 'rail-nav';
+      nav.innerHTML = '<button type="button" aria-label="Scroll back">&#8249;</button><button type="button" aria-label="Scroll forward">&#8250;</button>';
+      nav.children[0].onclick = () => rail.scrollBy({ left: -rail.clientWidth * .8, behavior: 'smooth' });
+      nav.children[1].onclick = () => rail.scrollBy({ left: rail.clientWidth * .8, behavior: 'smooth' });
+      head.insertBefore(nav, head.querySelector('a'));
+    });
+  }
+  document.addEventListener('DOMContentLoaded', () => { chrome(); Cart.render(); railNav(); });
   return { esc, card, grid, isMember, get, set, page };
 })();
