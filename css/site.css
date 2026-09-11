@@ -124,6 +124,12 @@ section { padding: 56px 0; }
 .chip:hover { border-color: var(--ink); }
 .chip.on { background: var(--ink); color: #fff; border-color: var(--ink); }
 .chip-deal.on { background: var(--orange); border-color: var(--orange); }
+.filters .chips { flex-direction: column; gap: 0; }
+.filters .chip { width: 100%; text-align: left; border: 0; border-bottom: 1px solid var(--line); border-radius: 0; background: transparent; padding: 10px 0; font-size: .95rem; display: flex; justify-content: space-between; align-items: center; }
+.filters .chip::after { content: ""; width: 8px; height: 8px; border-radius: 50%; background: transparent; }
+.filters .chip:hover { border-color: var(--line); text-decoration: underline; text-underline-offset: 3px; }
+.filters .chip.on { background: transparent; color: var(--ink); font-weight: 600; }
+.filters .chip.on::after { background: var(--orange); }
 .filters select, .filters input { width: 100%; border: 1px solid var(--line); background: #fff; border-radius: var(--r); padding: 9px 12px; }
 .menu-top { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 20px; flex-wrap: wrap; }
 .menu-top h1 { margin: 0; }
@@ -269,6 +275,8 @@ section { padding: 56px 0; }
   .filters-head h2 { margin: 0; }
   .filters h3:first-of-type { margin-top: 0; }
   .filter-toggle { display: inline-block; }
+  .filters .chips { display: grid; grid-template-columns: 1fr 1fr; gap: 0 24px; }
+  .filters .chips-deal { grid-template-columns: 1fr; }
   .filters-open #filters-done { position: fixed; left: 20px; right: 20px; bottom: 20px; width: auto; z-index: 36; }
   .deal-card { grid-template-columns: 1fr; }
 }

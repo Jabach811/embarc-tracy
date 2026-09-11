@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <h3>Search</h3>
       <input type="search" id="q-input" placeholder="Search the menu" value="${UI.esc(state.q)}">
       <h3>Deals</h3>
-      <div class="chips">
+      <div class="chips chips-deal">
         ${chip(state.deal === 'today', `Today's 30% off (${t.short})`, { deal: state.deal === 'today' ? '' : 'today' }, 'chip-deal')}
         ${chip(state.sale, 'Everything on sale', { sale: !state.sale }, 'chip-deal')}
       </div>
