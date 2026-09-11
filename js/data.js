@@ -10,12 +10,12 @@ window.Data = (() => {
     { key: 'gear', label: 'Gear', color: '#8a8a8a', icon: 'pills', blurb: 'Batteries, papers, pipes, and Embarc merch.' },
   ];
   const FEELS = [
-    { key: 'relaxing', label: 'Relaxing' },
-    { key: 'uplifting', label: 'Uplifting' },
-    { key: 'sleep', label: 'Sleep' },
-    { key: 'focus', label: 'Focus' },
-    { key: 'relief', label: 'Relief' },
-    { key: 'creative', label: 'Creative' },
+    { key: 'relaxing', label: 'Relaxing', hint: 'Unwind after work' },
+    { key: 'uplifting', label: 'Uplifting', hint: 'Good mood, good company' },
+    { key: 'sleep', label: 'Sleep', hint: 'Out by ten' },
+    { key: 'focus', label: 'Focus', hint: 'Clear head, get things done' },
+    { key: 'relief', label: 'Relief', hint: 'Ease aches and tension' },
+    { key: 'creative', label: 'Creative', hint: 'Music, art, ideas' },
   ];
   const STRAINS = ['Hybrid', 'Indica', 'Sativa', 'CBD'];
   const products = window.PRODUCTS || [];

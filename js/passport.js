@@ -12,12 +12,12 @@ document.addEventListener('DOMContentLoaded', () => {
     box.innerHTML = `<h2>You're in.</h2><p>Member prices show everywhere on this site from now on. Show your phone number at the counter and the same prices apply in store.</p><a class="btn" href="menu.html?${Deals.menuQuery(t)}">Shop today's deal</a> <button class="link" id="leave" style="margin-left:14px">Not me</button>`;
     $('#leave').onclick = () => { UI.set('embarc.member', '0'); location.reload(); };
   }
-  if (UI.isMember()) joined();
   $('#join-form').onsubmit = e => {
     e.preventDefault();
     UI.set('embarc.member', '1');
     joined();
   };
+  if (UI.isMember()) joined();
 
   const brands = Data.brandsIn(Data.products.filter(p => p.dealKind === 'everyday'));
   const logo = n => (Data.brands.find(b => b.name === n) || {}).logo;

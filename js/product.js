@@ -29,12 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="crumbs"><a href="menu.html">Menu</a> / <a href="menu.html?cat=${c.key}">${c.label}</a>${p.subtype ? ` / ${UI.esc(p.subtype[0].toUpperCase() + p.subtype.slice(1))}` : ''}</div>
       <div class="brand-line"><a href="menu.html?brand=${encodeURIComponent(p.brand)}" class="link">${UI.esc(p.brand)}</a></div>
       <h1>${UI.esc(p.name)}</h1>
-      <div class="facts">
-        ${p.strain ? `<span class="fact">${p.strain}</span>` : ''}
-        ${p.thcNum ? `<span class="fact mono">${p.thcNum}% THC</span>` : ''}
-        ${p.cbd && p.cbd !== '0%' && p.cbd !== '0.00%' ? `<span class="fact mono">${UI.esc(p.cbd)} CBD</span>` : ''}
-        ${p.effects.map(e => `<a class="fact" href="menu.html?feel=${e}" style="border-color:${c.color}">${Data.feel(e).label}</a>`).join('')}
-      </div>
+      <p class="facts">${[p.strain, p.thcNum ? p.thcNum + '% THC' : '', p.cbd && p.cbd !== '0%' && p.cbd !== '0.00%' ? UI.esc(p.cbd) + ' CBD' : ''].filter(Boolean).join(' · ')}${p.effects.length ? '<span class="sep"></span>' + p.effects.map(e => `<a href="menu.html?feel=${e}">${Data.feel(e).label}</a>`).join(', ') : ''}</p>
       ${p.effectsInferred && p.effects.length ? `<p class="mini" style="margin-top:-12px">Feel is a guess based on the strain type. Ask a Guide if you want to be sure.</p>` : ''}
       ${sibs.length > 1 ? `<div class="sizes">${sibs.sort((a, b) => a.priceOnline - b.priceOnline).map(s => `<a href="product.html?id=${s.id}" class="${s.id === p.id ? 'on' : ''}">${UI.esc(s.size || s.name)} <span class="mono">${Deals.fmt(Deals.priceInfo(s, now).online)}</span></a>`).join('')}</div>` : (p.size ? `<p class="mini">${UI.esc(p.size)}</p>` : '')}
       <div class="paybox${info.kind === 'onlineOnly' ? ' online' : ''}">

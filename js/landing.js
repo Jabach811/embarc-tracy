@@ -19,8 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
   $('#today-title').textContent = late ? `Tomorrow's deal, ${tm.short}` : `Today's deal, ${t.short}`;
   if (late) { const tmList = Data.products.filter(p => Deals.matches(p, tm) && p.image); $('#today-rail').innerHTML = UI.grid(tmList.filter(p => p.dealKind === 'none').concat(tmList.filter(p => p.dealKind !== 'none')).slice(0, 12), now); }
 
-  $('#feels').innerHTML = Data.FEELS.map(f => `<a class="feel" href="menu.html?feel=${f.key}">${f.label}</a>`).join('');
-  $('#cats').innerHTML = Data.CATS.map(c => `<a class="cat" href="menu.html?cat=${c.key}" style="background:${c.color}"><img src="assets/icons/icon-${c.icon}.svg" alt=""><span>${c.label}<small>${Data.products.filter(p => p.category === c.key).length} items</small></span></a>`).join('');
+  $('#feels').innerHTML = Data.FEELS.map(f => `<a class="feel" href="menu.html?feel=${f.key}">${f.label}<small>${f.hint}</small></a>`).join('');
+  $('#cats').innerHTML = Data.CATS.map(c => `<a class="cat" href="menu.html?cat=${c.key}" ><span class="cat-icon" style="background:${c.color}"><img src="assets/icons/icon-${c.icon}.svg" alt=""></span><span>${c.label}<small>${Data.products.filter(p => p.category === c.key).length} items</small></span></a>`).join('');
 
   const online = Data.sort(Data.products.filter(p => p.dealKind === 'onlineOnly'), 'deal', now);
   $('#online-rail').innerHTML = UI.grid(online.slice(0, 12), now);
